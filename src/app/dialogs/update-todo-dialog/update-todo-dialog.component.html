@@ -1,0 +1,25 @@
+<form (ngSubmit)="editTodo()">
+
+  <mat-form-field appearance="standard" class="width-100">
+    <mat-label>Cím</mat-label>
+    <input [(ngModel)]="editedTodo.title" name="title" (change)="editTodo()" matInput placeholder="Cím" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" class="width-100">
+    <mat-label>Leírás</mat-label>
+    <textarea [(ngModel)]="editedTodo.description" name="description" (change)="editTodo()" matInput
+      placeholder="Leírás"></textarea>
+  </mat-form-field>
+
+  <div class="datetime-div width-100">
+    <input type="datetime-local" id="datetime" class="width-100" name="datetime" #picker (change)="editTodo()"
+      [value]="dateInFormat">
+  </div>
+  <br>
+
+  <div class="buttons">
+    <button type="submit" mat-raised-button mat-dialog-close [mat-dialog-close]="editedTodo"
+      color="primary">Szerkesztés</button>
+    <button mat-raised-button mat-dialog-close [mat-dialog-close]="undefined">Mégsem</button>
+  </div>
+</form>

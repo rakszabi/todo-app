@@ -1,0 +1,19 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <mat-checkbox color="primary" (click)="changeDone($event)" (keydown)="$event.stopPropagation()" [checked]="todo.isDone">
+        {{ todo.title }}
+      </mat-checkbox>
+    </mat-panel-title>
+    <mat-panel-description *ngIf="todo.deadlineDate !== null">
+      {{ todo.deadlineDate | date:'HH:mm, MMMM dd' }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div>
+    <p *ngIf="todo.description">{{ todo.description }}</p>
+  </div>
+  <div class="expansion-buttons">
+    <button mat-raised-button color="primary" (click)="editTodo()">Szerkesztés</button>
+    <button mat-raised-button (click)="deleteTodo()">Törlés</button>
+  </div>
+</mat-expansion-panel>

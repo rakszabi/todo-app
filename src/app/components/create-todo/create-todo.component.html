@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Új feladat felvétele</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (ngSubmit)="createTodo()">
+
+      <mat-form-field appearance="standard" class="width-100">
+        <mat-label>Cím</mat-label>
+        <input [(ngModel)]="newTodo.title" name="title" matInput placeholder="Cím" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="standard" class="width-100">
+        <mat-label>Leírás</mat-label>
+        <textarea [(ngModel)]="newTodo.description" name="description" matInput placeholder="Leírás"></textarea>
+      </mat-form-field>
+
+      <div class="datetime-div width-100">
+        <input type="datetime-local" id="datetime" class="width-100" name="datetime" #picker placeholder="Dátum">
+      </div>
+
+      <br>
+
+      <button mat-raised-button color="primary" type="submit">Felvétel</button>
+    </form>
+  </mat-card-content>
+</mat-card>

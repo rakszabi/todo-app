@@ -1,0 +1,32 @@
+<!-- Csak akkor jelenítődik meg, ha van lejárt vagy befejezetlen todo -->
+<ng-container *ngIf="expiredTodos.length > 0 || todos.length > 0">
+  <div class="todo-list" *ngIf="expiredTodos.length > 0">
+    <h3>Lejárt feladatok</h3>
+    <mat-accordion>
+      <app-todo *ngFor="let todo of expiredTodos" (changedDone)="changeDone($event)"
+        (deletedTodo)="deleteTodo($event)" (editedTodo)="editTodo($event)" [todo]="todo"></app-todo>
+    </mat-accordion>
+  </div>
+
+  <div class="todo-list" *ngIf="todos.length > 0">
+    <h3>Feladatok</h3>
+    <mat-accordion>
+      <app-todo *ngFor="let todo of todos" (changedDone)="changeDone($event)" (deletedTodo)="deleteTodo($event)" (editedTodo)="editTodo($event)"
+        [todo]="todo"></app-todo>
+    </mat-accordion>
+  </div>
+</ng-container>
+
+<!-- Csak akkor jelenítődik meg, ha nincs lejárt vagy bfejezetlen todo -->
+<p *ngIf="expiredTodos.length == 0 && todos.length == 0" class="noMoreTodos">
+  Nincs több feladatot, pihenj egyet!
+</p>
+
+<!-- Csak akkor jelenítődik meg, ha van befejezett todo -->
+<div class="todo-list" *ngIf="doneTodos.length > 0">
+  <h3>Befejezett feladatok</h3>
+  <mat-accordion>
+    <app-todo *ngFor="let todo of doneTodos" (changedDone)="changeDone($event)" (editedTodo)="editTodo($event)"
+      (deletedTodo)="deleteTodo($event)" [todo]="todo"></app-todo>
+  </mat-accordion>
+</div>

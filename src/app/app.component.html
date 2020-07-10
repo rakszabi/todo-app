@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="wrapper">
+    <app-create-todo (creatingTodo)="creatingTodo($event)"></app-create-todo>
+    <app-todo-list [expiredTodos]="expiredTodos" [doneTodos]="doneTodos" [todos]="todos"
+      (changedDone)="changeDone($event)" (deletedTodo)="deleteTodo($event)" (editedTodo)="editTodo($event)">
+    </app-todo-list>
+  </div>
+</div>
