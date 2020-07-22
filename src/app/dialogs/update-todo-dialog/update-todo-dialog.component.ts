@@ -18,7 +18,7 @@ export class UpdateTodoDialogComponent implements OnInit {
     this.editedTodo = this.data;
 
     // Dátum formátum átalakítása az input['datetime-local'] miatt
-    if (this.editedTodo.deadlineDate !== undefined) {
+    if (this.editedTodo.deadlineDate !== null) {
       this.dateInFormat = this.editedTodo.deadlineDate.toISOString().substr(0, 16);
     } else {
       this.dateInFormat = '';

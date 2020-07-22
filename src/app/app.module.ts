@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateTodoComponent } from './components/create-todo/create-todo.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoComponent } from './components/todo-list/todo/todo.component';
+import { UpdateTodoDialogComponent } from './dialogs/update-todo-dialog/update-todo-dialog.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -18,7 +19,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
-import { UpdateTodoDialogComponent } from './dialogs/update-todo-dialog/update-todo-dialog.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({

@@ -116,7 +116,7 @@ export class AppComponent {
     this.distribution();
   }
 
-  //Todo szerkesztése
+  // Todo szerkesztése
   editTodo(todo: Todo) {
     for (let i = 0; i < this.todoList.length; i++) {
       if (this.todoList[i].id === todo.id) {
